@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Daemonset
+metadata:
+  name: mnist-learning
+  labels:
+    app: mnist-learning
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mnist-learning
+  template:
+    metadata:
+      labels:
+        app: mnist-learning
+    spec:
+      containers:
+        - name: mnist-learning
+          image: mnist-learning
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              aliyum.com/gpu-mem: 950
