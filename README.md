@@ -7,7 +7,7 @@ Just another demo...
 ## Requirements
 
 - [nvidia-docker2](https://github.com/NVIDIA/nvidia-docker)
-
+- [gpushare-scheduler-extender](https://github.com/AliyunContainerService/gpushare-scheduler-extender)
 
 
 ## Usage
