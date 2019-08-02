@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Daemonset
+kind: Deployment
 metadata:
   name: mnist-learning
   labels:
@@ -14,10 +14,12 @@ spec:
       labels:
         app: mnist-learning
     spec:
+      nodeSelector:
+        gpushare: "true"
       containers:
         - name: mnist-learning
           image: mnist-learning
           imagePullPolicy: IfNotPresent
           resources:
             limits:
-              aliyum.com/gpu-mem: 950
+              aliyun.com/gpu-mem: 1
